@@ -1,0 +1,87 @@
+<h1>Student Guide: Connecting GitHub to Claude Code on the Web</h1>
+<p class="byline">November 9, 2026 · <strong>Written by Claude and Hilary Havens</strong></p>
+<p>The screenshots are provided for your reference. If your screen looks a little different, the site has probably been updated: look for the same button names.</p>
+
+<h2>Before you start</h2>
+<p>Claude Code on the web runs Claude Code in the cloud, on a GitHub repository, from any browser. Nothing is installed on your computer. You connect your GitHub account once, and Claude can then read your repository, make changes, and send them back to GitHub for you to review.</p>
+<p>You need:</p>
+<ul>
+<li><strong>Your own paid Claude account</strong> (Pro or above). This is the same account you use for Cowork.</li>
+<li><strong>A GitHub account</strong> with at least one repository. If you don't have one yet, create one on github.com first: click <strong>+</strong> at the top right, then <strong>New repository</strong>. The screenshots use a repository named <code>dh_class</code>, but yours can have any name.</li>
+<li><strong>A web browser.</strong> Chrome, Edge, Safari, or Firefox all work.</li>
+</ul>
+<p>How it differs from the other two guides: Claude Code in the Terminal and Cowork work on files on your own computer. Claude Code on the web works on a copy of your GitHub repository in the cloud, so your changes only reach your computer after you sync with GitHub.</p>
+
+<h2>Step 1: Open Claude Code on the web</h2>
+<ol>
+<li>In your browser, go to <strong><a href="https://claude.ai/code">claude.ai/code</a></strong>.</li>
+<li>Sign in with your Claude account. Use the same Google login or email you use for Cowork.</li>
+</ol>
+<p>If you see "Claude Code isn't available on your account," you are probably signed in to the wrong account or organization. Click <strong>Switch organization</strong>, or sign out and sign in with your own Pro account.</p>
+<figure><img src="images/code-start.png" alt="The claude.ai/code message box, with the Auto environment and Repo selectors below it."></figure>
+
+<h2>Step 2: Connect GitHub and install the Claude app</h2>
+<p>On GitHub, connecting your account and installing the Claude GitHub App happen on the same screen. You only do this once.</p>
+<ol>
+<li>On claude.ai/code, click <strong>Connect GitHub</strong> when Claude asks. If it doesn't ask, open the <strong>Repo</strong> menu and click <strong>Install the Claude GitHub App</strong>.</li>
+<li>GitHub opens and asks <strong>Where do you want to install Claude?</strong> Sign in to GitHub if it asks, then click your own username.
+<figure><img src="images/gh-where-install.png" alt="GitHub's Install Claude page asking where to install, with your username listed."></figure></li>
+<li>On the <strong>Install &amp; Authorize Claude</strong> page, choose <strong>Only select repositories</strong>.</li>
+<li>Click <strong>Select repositories</strong>, type the name of your repository, and click it in the list. It appears under "Selected 1 repository."</li>
+<li>Click the green <strong>Install &amp; Authorize</strong> button.
+<figure><img src="images/gh-install-authorize.png" alt="GitHub's Install and Authorize page with Only select repositories chosen and one repository selected."></figure></li>
+<li>GitHub may ask you to <strong>Confirm access</strong> with your GitHub password. Type it and click <strong>Confirm</strong>.
+<figure><img src="images/gh-confirm-access.png" alt="GitHub's Confirm access page asking for your password."></figure></li>
+<li>GitHub sends you back to Claude.</li>
+</ol>
+<p>Why "Only select repositories": Claude can only see and change the repositories you pick. You can add more later (see the last section).</p>
+
+<h2>Step 3: Choose your repository and environment</h2>
+<p>Back on claude.ai/code, the controls sit just below the message box.</p>
+<ol>
+<li>Click <strong>Repo</strong>, type the name of your repository, and click it. It shows as <strong>YOUR-USERNAME/your-repository</strong> (<code>dh_class</code> in the screenshot). The branch next to it shows <code>main</code>; leave it.
+<figure><img src="images/repo-picker.png" alt="The Repo menu filtered to one repository, YOUR-USERNAME/dh_class, which is selected."></figure></li>
+<li>Leave the environment (the cloud icon on the left) set to <strong>Auto</strong>, which chooses a cloud setup based on your repository. Ignore <strong>Local</strong>, which only works in the Claude desktop app.</li>
+<li>Leave the permission mode (bottom right) set to <strong>Auto</strong>. Claude checks each action for risk and blocks the risky ones.
+<figure><img src="images/environment-menu.png" alt="The environment menu: Local (Desktop only), then Cloud options Auto, Default, and New environment."></figure></li>
+</ol>
+<p>You do not need to create or change an environment for this class.</p>
+
+<h2>Step 4: Try a first task</h2>
+<ol>
+<li>Type a small request in the message box, for example: <em>Add a file called hello.md that says "Hello from Claude Code on the web."</em></li>
+<li>Press Enter. Claude copies your repository into the cloud and starts working. You can watch each step.</li>
+<li>When Claude finishes, it pushes its work to a <strong>new branch</strong> on GitHub (a name like <code>claude/bold-bohr-accbkk</code>). Your <code>main</code> branch is not touched.</li>
+<li>The panel on the right shows <strong>Changes</strong> with counts like <strong>+1 −0</strong>. Click the counts to see exactly what changed.</li>
+<li>If you're happy with the change, click <strong>Create PR</strong>, or just tell Claude "yes, open a pull request."
+<figure><img src="images/changes-create-pr.png" alt="A finished session: Claude reports the push worked, and the right panel shows Changes +1 −0 with a Create PR button."></figure></li>
+<li>On GitHub, open the pull request and click <strong>Merge pull request</strong>, then <strong>Confirm merge</strong>. The change is now on <code>main</code>.</li>
+</ol>
+<p>To get the change onto your computer, open GitHub Desktop and click <strong>Fetch origin</strong>, then <strong>Pull origin</strong>.</p>
+<p>You can close the browser tab while Claude works. The session keeps running, and you can come back to it from claude.ai/code.</p>
+
+<h2>Changing access later</h2>
+<ul>
+<li><strong>Add or remove repositories:</strong> on GitHub, open <strong>Settings → Applications → Installed GitHub Apps</strong>, click <strong>Configure</strong> next to Claude, and change the repository list.</li>
+<li><strong>Disconnect GitHub from Claude:</strong> go to <a href="https://claude.ai/customize/connectors">claude.ai/customize/connectors</a> and disconnect GitHub.</li>
+</ul>
+
+<h2>Troubleshooting</h2>
+<table>
+<caption>Common problems and fixes</caption>
+<tr><th scope="col">Problem</th><th scope="col">Fix</th></tr>
+<tr><td>My repository isn't in the list</td><td>The Claude GitHub App isn't allowed to see it. Add the repository to the app (see above), then reload claude.ai/code.</td></tr>
+<tr><td>I only see a GitHub login button</td><td>Step 2 didn't finish. Click the button and authorize Claude again.</td></tr>
+<tr><td>"Claude Code isn't available on your account"</td><td>You're in the wrong account or organization. Click <strong>Switch organization</strong> or sign in with your own Pro account.</td></tr>
+<tr><td>My changes aren't on my computer</td><td>Cloud changes go to GitHub first. Merge the pull request, then <strong>Pull origin</strong> in GitHub Desktop.</td></tr>
+<tr><td>The session seems stuck</td><td>Check <a href="https://status.claude.com">status.claude.com</a>, then start a new session.</td></tr>
+</table>
+<p>If Claude says it <strong>couldn't push</strong> (a "403" error and a <strong>Connect GitHub</strong> button), the Claude GitHub App isn't installed on that repository. Your work is safe in the session. Add the repository to the app, then tell Claude "I installed the app, please push again."</p>
+<figure><img src="images/push-failed.png" alt="Claude reporting that it couldn't reach the GitHub repository, with a Connect GitHub button and a 403 error."></figure>
+
+<h2>Sources</h2>
+<ul>
+<li><a href="https://code.claude.com/docs/en/claude-code-on-the-web">Claude Code on the web</a></li>
+<li><a href="https://code.claude.com/docs/en/web-quickstart">Get started with Claude Code on the web</a></li>
+<li><a href="https://code.claude.com/docs/en/cloud-environments">Cloud environments</a></li>
+</ul>
